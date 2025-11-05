@@ -8,32 +8,29 @@
     <title>Ejemplos de GRID CSS3</title>
 
     <style>
+    body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
 
-    body{
-        background-color:#d8ecf3 ;
-    }
-    
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 3fr 2fr 1fr;
-        grid-template-rows: 2fr 3fr 1fr;
-    }
-    
-    .grid div{
-        background-color: lightblue;
-        border: 1px solid white;
+    h2 {
+        text-align: center;
+        color: #333;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
     }
 
     .grid-pixeles{
         display: grid;
         grid-template-columns: 200px 400px 300px 100px;
         grid-template-rows: 200px 100px 300px;
-    }
+    }   
 
-    .grid-pixeles div{
-        background-color: lightgreen;
-        border: 1px solid white;
-    }
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 3fr 2fr 1fr;
+        grid-template-rows: 2fr 3fr 1fr;
+    } 
 
     .grid-repeat{
         display: grid;
@@ -42,55 +39,113 @@
         grid-gap: 20px;
     }
 
-    .grid-repeat div{
-        background-color: lightcoral;
-        border: 1px solid white;
-    }
-
     .grid-area{
-        display: grid;
+        display:grid;
         grid-gap: 20px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(4, auto);
         grid-template-areas: 
-            "header     header      header"
+            "header    header       header"
             "sidebar1   contenido   sidebar2"
             "sidebar1   widget      sidebar2"
             "footer     footer      footer";
     }
 
-    .grid-area .header {
-        background-color: orangered;
+    .grid-area .header{
+        background: #ff6347;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         grid-column-start: header;
         grid-column-end: header;
     }
 
     .grid-area .sidebar1{
-        background: pink;
+        background: #20b2aa;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         grid-column: sidebar1;
         grid-row: sidebar1;
     }
 
     .grid-area .contenido{
-        background: lightyellow;
-        color: black;
+        background: #ff69b4;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         grid-area: contenido;
     }
 
-    .grid-area .sidebar2{
-        background: lightgreen;
-        grid-area: sidebar2;
-    }
-    
     .grid-area .widget{
-        background: lightsalmon;
+        background: #1e90ff;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         grid-area: widget;
     }
 
+    .grid-area .sidebar2{
+        background: #32cd32;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        grid-area: sidebar2;
+    }
+
     .grid-area .footer{
-        background: lightgray;
+        background: #87cefa;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         grid-area: footer;
     }
+
+    .grid-posicion{
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: repeat(3, 5fr);
+        grid-template-rows: repeat(3, 200px);
+        justify-items: center;
+        align-items: center;  
+    }
+
+    .grid-posicion div {
+        background: #ffb347;
+        justify-self: start;
+        align-self: start;
+        border-radius: 8px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+        padding: 10px;
+    }
+
+    .grid div {
+        background-color: #add8e6;
+        border: 1px solid #000;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .grid-pixeles div {
+        background-color: #f0e68c;
+        border: 1px solid #000;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .grid-repeat div {
+        background-color: #dda0dd;
+        border: 1px solid #000;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        text-align: center;
+        line-height: 50px;
+    }
+
+    header h1 {
+        text-align: center;
+        color: #222;
+        margin-bottom: 40px;
+    }
+
     </style>
 
 </head>
@@ -100,39 +155,41 @@
         <h1>Fundamentos de GRID (CSS3)</h1>
     </header>
 
-    <h2>GRID con AREA</h2>
+    <h2>GRID con Área</h2>
     <div class="grid-area">
-        <div class="header">1</div>
-        <div class="sidebar1">2</div>
-        <div class="contenido">3</div>
-        <div class="widget">4</div>
-        <div class="sidebar2">5</div>
-        <div class="footer">6</div>
-    </div>
-    
-    <h2>GRID CON FRACCIONES</h2>
-    <div class="grid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
-        <div>11</div>
-        <div>12</div>
-        <div>13</div>
-        <div>14</div>
-        <div>15</div>
-        <div>16</div>
+            <div class="header">1</div>
+            <div class="sidebar1">2</div>
+            <div class="contenido">3</div>
+            <div class="widget">4</div>
+            <div class="sidebar2">5</div>
+            <div class="footer">6</div>
     </div>
 
     <br>
 
-    <h2>Fundamentos de GRID con PIXELES (CSS3)</h2>
+    <h2>GRID con Fracciones</h2>
+        <div class="grid">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+
+        <br>
+
+    <h2>GRID con Pixeles</h2>
     <div class="grid-pixeles">
         <div>1</div>
         <div>2</div>
@@ -154,7 +211,29 @@
 
     <br>
 
+    <h2>GRID con Repeat</h2>
     <div class="grid-repeat">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+    </div>
+    <br>
+
+    <h2>GRID FLEX o Posicionamiento</h2>
+    <div class="grid-posicion">
         <div>1</div>
         <div>2</div>
         <div>3</div>
